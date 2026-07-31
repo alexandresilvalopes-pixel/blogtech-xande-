@@ -1,0 +1,153 @@
+/* ==========================================
+   VARIÁVEIS DE CORES E CONFIGURAÇÕES GERAIS
+   ========================================== */
+:root {
+  --bg-color: #0b0c10;
+  --card-bg: #1f2833;
+  --silver-primary: #c5c6c7;
+  --silver-bright: #e5e5e5;
+  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--silver-primary);
+  font-family: var(--font-family);
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ==========================================
+   CABEÇALHO
+   ========================================== */
+header {
+  background: linear-gradient(135deg, #000000, #2c3e50);
+  border-bottom: 2px solid var(--silver-primary);
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(197, 198, 199, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: var(--silver-bright);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  /* Animação suave no título */
+  animation: glow 3s infinite alternate;
+}
+
+header p {
+  font-size: 1rem;
+  color: var(--silver-primary);
+  margin-top: 0.5rem;
+}
+
+/* ==========================================
+   CONTEÚDO PRINCIPAL
+   ========================================== */
+.container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1;
+}
+
+.post {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(197, 198, 199, 0.2);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito de elevação ao passar o mouse */
+.post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(197, 198, 199, 0.15);
+}
+
+.post h2 {
+  color: var(--silver-bright);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.post p {
+  margin-bottom: 1.2rem;
+  text-align: justify;
+}
+
+/* ==========================================
+   SEÇÃO DO CONTADOR DE LIKES
+   ========================================== */
+.like-section {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid rgba(197, 198, 199, 0.2);
+  padding-top: 1.5rem;
+}
+
+.like-btn {
+  background: linear-gradient(145deg, #2b2b2b, #111111);
+  color: var(--silver-bright);
+  border: 1px solid var(--silver-primary);
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  outline: none;
+}
+
+.like-btn:hover {
+  background: var(--silver-primary);
+  color: #000;
+  box-shadow: 0 0 10px var(--silver-bright);
+}
+
+/* Animação de clique no botão */
+.like-btn:active {
+  transform: scale(0.92);
+}
+
+.like-count {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--silver-bright);
+}
+
+/* ==========================================
+   RODAPÉ
+   ========================================== */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(197, 198, 199, 0.1);
+  background-color: #000;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   ANIMAÇÃO KEYFRAMES
+   ========================================== */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px rgba(229, 229, 229, 0.2);
+  }
+  100% {
+    text-shadow: 0 0 15px rgba(229, 229, 229, 0.8), 0 0 20px rgba(197, 198, 199, 0.4);
+  }
+}
